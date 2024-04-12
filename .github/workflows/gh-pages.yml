@@ -28,12 +28,12 @@ jobs:
       run: templ generate
 
     - name: build
-      run: go build main.go
+      run: go build -o build/main
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v2
       with:
-        path: "dist/gh-pages-workflow/browser/"
+        path: "./build"
 
   # Deployment job
   deploy:
