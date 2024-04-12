@@ -24,7 +24,27 @@ jobs:
     - name: templ
       run: templ generate
 
-    - name: run
-      run: go run cmd/main.go
+    - name: build
+      run: go build main.go
 
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: "dist/gh-pages-workflow/browser/"
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    runs-on: ubuntu-latest
+    needs: build
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
 

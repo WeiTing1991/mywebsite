@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"log"
 	"github.com/WeiTing1991/mywebsite/view/index"
 	"github.com/a-h/templ"
 )
@@ -15,11 +16,11 @@ func main() {
 
 	indexHandler := index.Base("wellcome to my website")
 	http.Handle("/", templ.Handler(indexHandler))
-	fmt.Println("Server is running on port 3000")
-	fmt.Println("The web is running ....")
+	log.Println("Server is running on port 8080")
 
+	fmt.Println("Server is running on port 8080")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 }
