@@ -1,0 +1,30 @@
+name:github pages
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.20'
+
+    - name: Build css
+      run: npx tailwindcss --config tailwind.config.js -i ./static/css/input.css -o ./static/css/tailwind.css
+
+    - name: templ
+      run: templ generate
+
+    - name: run
+      run: go run cmd/main.go
+
+
