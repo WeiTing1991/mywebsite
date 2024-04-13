@@ -8,4 +8,6 @@ RUN go mod download
 COPY . .
 
 RUN go build -o ./build/myweb .
+
+EXPOSE 80
 CMD ./build/myweb
