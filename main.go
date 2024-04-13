@@ -16,10 +16,10 @@ func main() {
 
 	indexHandler := index.Base("wellcome to my website")
 	http.Handle("/", templ.Handler(indexHandler))
-	log.Println("Server is running on port 8080")
+	log.Println("Server is running on port 80")
 
-	fmt.Println("Server is running on port 8080")
-	err := http.ListenAndServe(":8080", nil)
+	fmt.Println("Server is running on port 80")
+	err := http.ListenAndServe(":80", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
