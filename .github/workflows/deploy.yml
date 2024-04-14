@@ -29,11 +29,14 @@ jobs:
             /go.sum
             /go.mod
 
-      - name: Install Netlify and tailwindcss
-        run: |
+      - name: Install Netlify
+        run:
           npm install netlify-cli@17.22.1 -g
-          npm install -D tailwindcss
 
+      - name: Install tailwindcss
+        run:
+          npm install -D tailwindcss
+          
       - name: Build  
         run: |
             npx tailwindcss --config tailwind.config.js -i ./static/css/input.css -o ./static/css/tailwind.css
