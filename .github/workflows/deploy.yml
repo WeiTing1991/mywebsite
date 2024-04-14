@@ -1,0 +1,52 @@
+
+name: Deploy website
+
+on: [push]
+
+jobs:
+  build-and-deploy:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version: [ '1.20', '1.21.x', '1.22.x']
+
+    steps:
+
+      - name: Repository Checkout
+      - uses: actions/checkout@v4
+
+      - name: Setup Go ${{ matrix.go-version }}
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go-version }}
+
+      - name: Display Go version
+        run: go version
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go-version }}
+          cache-dependency-path: |
+            /go.sum
+            /go.mod
+        run:
+          go mod download
+
+      - name: Install Netlify
+        run: npm install netlify-cli@17.22.1 -g
+
+      - name: Build
+        run: |
+            npx tailwindcss --config tailwind.config.js -i ./static/css/input.css -o ./static/css/tailwind.css
+            templ generate
+            go build .
+
+      - name: Deploy to Netlify
+        id: netlify_deploy
+        run: |
+          netlify deploy \
+            --dir dist \
+            --site ${{ secrets.NETLIFY_SITE_ID }} \
+            --auth ${{ secrets.NETLIFY_API_TOKEN }}
