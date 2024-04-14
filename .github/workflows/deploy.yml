@@ -28,8 +28,6 @@ jobs:
           cache-dependency-path: |
             /go.sum
             /go.mod
-        run:
-          go mod download
 
       - name: Install Netlify
         run: npm install netlify-cli@17.22.1 -g
