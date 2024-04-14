@@ -42,6 +42,7 @@ jobs:
       - name: Docker Auth with registey
         id: docker-auth-google
         run: |-
+          gcloud auth configure-docker europe-west6-docker.pkg.dev \
           VERSION=2.1.22
           OS=linux  # or "darwin" for OSX, "windows" for Windows.
           ARCH=amd64  # or "386" for 32-bit OSs
