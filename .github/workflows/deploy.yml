@@ -32,11 +32,11 @@ jobs:
       - name: Install dependencies
         run:
           go mod download
-          go install go install github.com/a-h/templ/cmd/templ@latest
+          go install github.com/a-h/templ/cmd/templ@latest
 
-      - name: Install Netlify
-        run:
-          npm install netlify-cli@17.22.1 -g
+      # - name: Install Netlify
+      #   run:
+      #     npm install netlify-cli@17.22.1 -g
 
       - name: Install tailwindcss
         run:
