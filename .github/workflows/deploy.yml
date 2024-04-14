@@ -26,8 +26,8 @@ jobs:
         with:
           go-version: ${{ matrix.go-version }}
           cache-dependency-path: |
-            /go.sum
-            /go.mod
+            go.sum
+            go.mod
 
       - name: Install dependencies
         run:
@@ -47,10 +47,10 @@ jobs:
             templ generate
             go build .
 
-      - name: Deploy to Netlify
-        id: netlify_deploy
-        run: |
-          netlify deploy \
-            --dir dist \
-            --site ${{ secrets.NETLIFY_SITE_ID }} \
-            --auth ${{ secrets.NETLIFY_API_TOKEN }}
+      # - name: Deploy to Netlify
+      #   id: netlify_deploy
+      #   run: |
+      #     netlify deploy \
+      #       --dir dist \
+      #       --site ${{ secrets.NETLIFY_SITE_ID }} \
+      #       --auth ${{ secrets.NETLIFY_API_TOKEN }}
