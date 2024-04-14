@@ -43,7 +43,7 @@ jobs:
         id: docker-auth-google
         run: |-
           gcloud auth configure-docker europe-west6-docker.pkg.dev 
-          gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://us-west6-docker.pkg.dev
+          gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://europe-west6-docker.pkg.dev 
 
           
       - name: Build and Push Container
