@@ -50,7 +50,9 @@ jobs:
             | tar xz docker-credential-gcr \
             && chmod +x docker-credential-gcr && sudo mv docker-credential-gcr /usr/bin/
           docker-credential-gcr configure-docker --registries=${{ env.GAR_LOCATION }}-docker.pkg.dev,${{ env.REGION }}-docker.pkg.dev
+          gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin europe-west6-docker.pkg.dev
           cat /home/runner/.docker/config.json
+          
       - name: Build and Push Container
         run: 
           docker build -t ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.SERVICE }}:${{ github.sha }} .
