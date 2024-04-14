@@ -39,6 +39,18 @@ jobs:
           username: _json_key
           password: ${{ secrets.GCP_CREDENTIALS }}
 
+      - name: Docker Auth with registey
+        id: docker-auth-google
+        run: |-
+          VERSION=2.1.22
+          OS=linux  # or "darwin" for OSX, "windows" for Windows.
+          ARCH=amd64  # or "386" for 32-bit OSs
+          curl -fsSL "https://github.com/GoogleCloudPlatform/docker-credential-gcr/releases/download/v${VERSION}/docker-credential-gcr_${OS}_${ARCH}-${VERSION}.tar.gz" \
+            | tar xz docker-credential-gcr \
+            && chmod +x docker-credential-gcr && sudo mv docker-credential-gcr /usr/bin/
+          docker-credential-gcr configure-docker --registries=-${{ env.GAR_LOCATION }}-docker.pkg.dev, ${{ env.REGION }}-docker.pkg.dev
+
+
       - name: Build and Push Container
         run: |-
           docker build -t "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.SERVICE }}:${{ github.sha }}" ./
