@@ -19,15 +19,21 @@
   --highlight-low: #21202e;
   --highlight-med: #403d52;
   --highlight-high: #524763;
-  --highlight_text: "#f4ede8",
+  --highlight_text: #f4ede8;
+}
+
+.fade-in{
+  width: 100%;
+  max-width: 80ch;
+  animation: fade 7s;
 }
 
 .move-cursor{
-  width: 14.5em;
+  width: 18em;
   animation: typing 3s steps(40), blink .5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 8px solid var(--muted);
+  border-right: 8px solid var(--highlight_text);
 }
 
 /* animation */
@@ -40,7 +46,7 @@
 
 @keyframes typing {
   0% { width: 0; }
-  100% { width: 14.5em; }
+  100% { width: 18em; }
 }
 
 @keyframes blink {

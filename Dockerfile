@@ -9,5 +9,7 @@ COPY . .
 
 RUN go build -o ./build/myweb .
 
-EXPOSE 80
-CMD ./build/myweb
+EXPOSE 8080
+
+CMD ["./build/myweb"]
+
