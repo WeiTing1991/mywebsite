@@ -6,6 +6,7 @@ import (
 	"os"
 	"log"
 	"github.com/WeiTing1991/mywebsite/view/index"
+	"github.com/WeiTing1991/mywebsite/view/work"
 	"github.com/a-h/templ"
 )
 
@@ -16,6 +17,9 @@ func main() {
 
 	indexHandler := index.Base("wellcome to my website")
 	http.Handle("/", templ.Handler(indexHandler))
+
+	workHandler := work.Base("wellcome to my works")
+	http.Handle("/work", templ.Handler(workHandler))
 
 	port := os.Getenv("PORT")
 
