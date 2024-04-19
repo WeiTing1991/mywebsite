@@ -15,10 +15,10 @@ func main() {
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	indexHandler := index.Base("wellcome to my website")
+	indexHandler := index.Base("weitingchen")
 	http.Handle("/", templ.Handler(indexHandler))
 
-	workHandler := work.Base("wellcome to my works")
+	workHandler := work.Base("weitingwork")
 	http.Handle("/work", templ.Handler(workHandler))
 
 	port := os.Getenv("PORT")
