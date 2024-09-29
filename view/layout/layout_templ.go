@@ -36,7 +36,7 @@ func BaseLayout(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</title><!-- Tailwind CSS --><link rel=\"stylesheet\" href=\"./static/css/tailwind.css\"><link rel=\"stylesheet\" href=\"https://fonts.cdnfonts.com/css/roboto\"><link href=\"https://fonts.cdnfonts.com/css/ibm-plex-sans\" rel=\"stylesheet\"><link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\"><style>\n        @import url('https://fonts.cdnfonts.com/css/ibm-plex-sans');\n    </style><!-- HTMX --><script src=\"https://cdn.jsdelivr.net/npm/htmx.org/dist/htmx.min.js\"></script></head><body style=\"background-color:var(--muted);\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</title><!-- Tailwind CSS --><link rel=\"stylesheet\" href=\"./static/css/tailwind.css\"><link rel=\"stylesheet\" href=\"https://fonts.cdnfonts.com/css/roboto\"><link href=\"https://fonts.cdnfonts.com/css/ibm-plex-sans\" rel=\"stylesheet\"><link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\"><style>\n        @import url('https://fonts.cdnfonts.com/css/ibm-plex-sans');\n    </style><!-- HTMX --><script src=\"https://cdn.jsdelivr.net/npm/htmx.org/dist/htmx.min.js\"></script></head><body style=\"background-color:#71717a\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
