@@ -34,10 +34,6 @@ jobs:
           go mod download
           go install github.com/a-h/templ/cmd/templ@latest
 
-      # - name: Install Netlify
-      #   run:
-      #     npm install netlify-cli@17.22.1 -g
-
       - name: Install tailwindcss
         run:
           npm install -D tailwindcss
@@ -47,11 +43,3 @@ jobs:
             npx tailwindcss --config tailwind.config.js -i ./static/css/input.css -o ./static/css/tailwind.css
             templ generate
             go build .
-
-      # - name: Deploy to Netlify
-      #   id: netlify_deploy
-      #   run: |
-      #     netlify deploy \
-      #       --dir dist \
-      #       --site ${{ secrets.NETLIFY_SITE_ID }} \
-      #       --auth ${{ secrets.NETLIFY_API_TOKEN }}

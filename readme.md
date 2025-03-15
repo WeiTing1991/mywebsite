@@ -16,5 +16,9 @@ templ --version
 make 
 
 # deploy to google cloud
+
 ./deploy.sh
+
+gcloud config set project PROJECT_ID
+
 ```
