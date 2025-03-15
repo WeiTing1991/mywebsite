@@ -29,9 +29,8 @@ templ Base(title string) {
 <body style="background-color:#71717a">
   <div class="flex justify-center items-center h-screen">
     <!-- Outer sub-div -->
-    <div class="w-full max-w-screen-lg px-10 line_fade"
-      style="outline: 1px solid #403d52; border-radius: 10px; box-shadow: 0 0 10px #403d52;">
-      <div class="move-cursor mt-4">
+    <div class="w-full max-w-screen-lg px-10 fade" style="outline: 2px solid #403d52">
+      <div class="move-cursor mr-2 ml-2 mt-2">
         <!-- move cursor -->
         <text class="font-robotoBlack text-2xl">
           weiting@weitingwork ~ $
@@ -41,7 +40,7 @@ templ Base(title string) {
         </text>
       </div>
       <!-- list sub-div -->
-      <div class="fade-in mr-3 ml-3 mb-3">
+      <div class="fade-in mr-3 ml-3 mt3">
         <section class="font-robotoBlack text-lg px-4 py-6">
           <ul class="list-none" style="color:var(--highlight_text);">
             <li>
@@ -64,7 +63,7 @@ templ Base(title string) {
         </section>
         <section class="font-robotoMedium text-lg px-2 py-2" style="color:var(--highlight-low);">
           <span>
-            Hi there! I`m a software developer, and architect who focus on robotics, web/desktop applicaton.
+            Hi there! I`m a software engineer, and architect who focus on robotics, web/desktop applicaton.
             <br />
             Here, you can find my selected works and interests. Feel free to reach out to me.
           </span>
@@ -76,7 +75,8 @@ templ Base(title string) {
           &#64;2025 Wei-Ting Chen. This site was styled with
           <a href="https://rosepinetheme.com/">
             <strong>
-              Rosé Pine theme
+              Rosé
+              Pine theme
             </strong>
           </a>
         </span>

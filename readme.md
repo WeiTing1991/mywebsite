@@ -1,5 +1,16 @@
 # weitingchen.github.io
 
+## prerequisites
+
+```bash
+
+npm install -D tailwindcss
+
+go install github.com/a-h/templ/cmd/templ@latest
+templ --version
+
+```
+
 ```bash
 # run local
 make 

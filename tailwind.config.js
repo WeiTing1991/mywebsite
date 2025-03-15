@@ -1,12 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [ "./**/*.html", "./**/*.templ", "./**/*.go", ],
+  content: [
+    "./static/**/*.html",
+    "./*.templ",
+    "./**/*.templ",
+  ],
   theme: {
     container: {
       center: true,
     },
     extend: {
-     fontFamily: {
+      fontFamily: {
         roboto: ["Roboto", "sans-serif"],
         robotoThin: ["Roboto Thin", "sans-serif"],
         robotoLight: ["Roboto Light", "sans-serif"],
@@ -17,5 +21,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
-
+};
